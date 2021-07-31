@@ -1,9 +1,9 @@
-# Mouse Clicking Game
+# Todos
 
-Click on the circle to get points.
+You can add and delete the things you have to do.
 
-- Repository URL : [mouse-clicking-game](https://github.com/SaMaSaLa/mouse-clicking-game)
-- Demo URL : [Demo](https://samasala.github.io/mouse-clicking-game/)
+- Repository URL : [todos](https://github.com/SaMaSaLa/todos)
+- Demo URL : [Demo](https://samasala.github.io/todos/)
 
 Authors:
 
