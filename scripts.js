@@ -8,10 +8,8 @@ let todos = [];
 let pST = localStorage.getItem("todos");
 let pPT = JSON.parse(pST);
 
-if (pPT === null) {
-  pPT = [];
-}
-for (let i = 0; i < pPT.length; i++) {
+
+for (let i = 0; i < pPT; i++) {
   divEl.innerText = "";
   let pth = document.createElement("p");
   pth.textContent = pPT[i];
@@ -38,8 +36,11 @@ addEl.addEventListener("click", () => {
     const todosStringed = JSON.stringify(todos);
     localStorage.setItem("todos", todosStringed);
     deleteButton.addEventListener("click", function () {
-      let parsed = JSON.parse(localStorage.removeItem("todos"));
-      console.log(parsed);
+      let parsed = JSON.parse(localStorage.getItem("todos"));
+      let item = parsed[i - 1];
+      deleteButton.addEventListener("click", () => {
+        localStorage.removeItem(todos[0])
+      });
     });
   }
   j++;
