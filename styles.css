@@ -1,0 +1,19 @@
+input,
+button {
+  border-radius: 0px 100px 0px 100px;
+  padding: 5px 15px 5px 15px;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  border: 5px solid brown;
+  padding-left: 20px;
+  padding-right: 20px;
+}
