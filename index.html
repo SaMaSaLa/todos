@@ -10,14 +10,16 @@
   </head>
   <body>
     <h1>Todos</h1>
-    <input
-      type="text"
-      placeholder="Type and click add to add a todo"
-      value="minecraft"
-      id="txt-area"
-    />
-    <button id="add-btn">Add</button>
-    <button id="del-all-btn">Delete All</button>
+    <form>
+      <input
+        type="text"
+        placeholder="Type and click add to add a todo"
+        value="minecraft"
+        id="txt-area"
+      />
+      <button type="submit" id="add-btn">Add</button>
+      <button id="del-all-btn">Delete All</button>
+    </form>
     <div id="todos-container"></div>
     <script src="scripts.js"></script>
   </body>
