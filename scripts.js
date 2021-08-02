@@ -1,85 +1,44 @@
-// const todosContainerEl = document.getElementById("todos-container");
-// const addBtnEl = document.getElementById("add-btn");
-// const delAllBtnEl = document.getElementById("del-all-btn");
-// const txtArea = document.getElementById("txt-area");
-
-// const olEl = document.createElement("ol");
-
-// let todos = [];
-
-// let todosStringed = localStorage.getItem("todos");
-// let todosParsed = JSON.parse(todosStringed);
-
-// // append olEl to todosContainerEl
-// todosContainerEl.appendChild(olEl);
-
-// const renderTodos = (i) => {};
-
-// const setTodosToLocalStorage = () => {
-//   // parsing peoples todos
-//   let parsedTodos = JSON.stringify(todos);
-
-//   // setting item in local storage
-//   localStorage.setItem("todos", parsedTodos);
-// };
-
-// const renderTodosUI = () => {
-//   // clean everything in ol
-//   olEl.innerText = "";
-
-//   for (let i = 0; i < todos.length; i++) {
-//     // create li
-//   }
-// };
-
-// const addTodosToLocalStorage = () => {
-//   // add li
-//   let li = document.createElement("li");
-
-//   // add text content
-//   li.textContent = txtArea.value;
-
-//   // append to ol
-//   olEl.appendChild(li);
-
-//   // push to peoplesTodos
-//   todos.push(txtArea.value);
-
-//   // set to local storage
-//   setTodosToLocalStorage();
-
-//   // add delete button
-//   const dltBtn = document.createElement("button");
-//   dltBtn.textContent = "Delete";
-
-//   // append delete button
-//   li.appendChild(dltBtn);
-// };
-
-// const deleteTodosfromLocalStorage = () => {};
-
-// const clearTodosFromLocalStorage = () => {
-//   //clear div
-//   todosContainerEl.innerText = "";
-
-//   //clear local storage
-//   localStorage.clear();
-// };
-
-// addBtnEl.addEventListener("click", addTodosToLocalStorage);
-// delAllBtnEl.addEventListener("click", clearTodosFromLocalStorage);
-
-// Only change Local Storage - Don't create/touch/look at UI
-
 const addTodoToLocalStorage = (todo) => {
+  const txtAreaEl = document.getElementById("txt-area");
   // Test if todo is not empty, not null, not undefined, not empty after trimmed
+
+  if (todo === null || todo === undefined || todo.trim() === "") {
+    txtAreaEl.placeholder = "Please add something other than Spaces";
+  }
+
   // Get todo string from local storage
+
+  const todoString = JSON.stringify(localStorage.getItem(todo));
+
   // Convert todo string to an array
+
+  const todoArray = JSON.parse(todoString);
+
   // Check if todo array is null
+
+  if (
+    todoArray === null ||
+    todoArray === undefined ||
+    todoArray.trim() === ""
+  ) {
+    txtAreaEl.placeholder = "Please add something other than Spaces";
+  }
+
   // push todo to todo array
+
+  todoArray.push(todo);
+
   // convert todo array to todo string
+
+  const todoArrayStringed = JSON.stringify(todoArray);
+
   // save todo string in local storage
+
+  localStorage.setItem(todoArrayStringed);
+
   // Call render todos ui from local storage here
+
+  renderTodosUIFromLocalStorage;
 };
 
 const deleteTodoFromLocalStorage = (index) => {
@@ -91,11 +50,15 @@ const deleteTodoFromLocalStorage = (index) => {
   // convert todo array to todo string
   // save todo string in local storage
   // Call render todos ui from local storage here
+
+  renderTodosUIFromLocalStorage;
 };
 
 const deleteAllTodosFromLocalStorage = () => {
   // clear everything from local storage
   // Call render todos ui from local storage here
+
+  renderTodosUIFromLocalStorage;
 };
 
 // Update UI here.
